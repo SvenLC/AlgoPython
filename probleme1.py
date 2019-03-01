@@ -10,3 +10,28 @@
 # Lorsque le contenu total de la tirelire dépasse 1500 €, je casse la tirelire.
 
 # Le but du sujet est de déterminer le contenu de la tirelire lorsque je la casserai.
+
+def depot(n):
+    if n == 1 :
+        return 1
+    else :
+        return depot(n-1) + 1.01
+
+
+def jour(n):
+    jours = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+    x = (n-1)%7
+    return jours[x]
+
+def contenu(t):
+    s = 0
+    for i in range(1, t, 1):
+        s += depot(t)
+    return s
+
+
+i = 1
+while contenu(i) <= 1500:
+    i += 1
+
+print('Je casserais la tirelire un ' + jour(i) + ' et son contenu sera de ' + str(contenu(i)))

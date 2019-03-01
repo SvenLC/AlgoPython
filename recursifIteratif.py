@@ -14,6 +14,13 @@ def ajouterDeux(x, y):
     
     return x
 
+def ajouterDeux(x, y):
+    i = 0
+    while i <= y:
+        x += 2
+    
+    return x
+
 print(ajouterDeux(1,10))
 
 # Itératif boucle while
